@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 	  redirect_to post_path(@post)
 =end
 		# @post = Post.new(params.require(:post).permit(:title, :description))
-		@post = Post.new(post_params)
+		@post = Post.new(post_params(:title, :description))
 		@post.save
 		redirect_to post_path(@post)
 	end
